@@ -15,7 +15,8 @@ config :scribble_pad, ScribblePadWeb.Endpoint,
   debug_errors: true,
   secret_key_base: "YgdMmEzmnQ1aQiw93Wq7N8d60AJ2AoX9CgoARDS48WQwcpFxfuEdTLogoao/3e1/",
   watchers: [
-    esbuild: {Esbuild, :install_and_run, [:scribble_pad, ~w(--sourcemap=inline --watch)]},
+    node: ["build.js", "--watch", cd: Path.expand("../assets", __DIR__)],
+    # esbuild: {Esbuild, :install_and_run, [:scribble_pad, ~w(--sourcemap=inline --watch)]},
     tailwind: {Tailwind, :install_and_run, [:scribble_pad, ~w(--watch)]}
   ]
 

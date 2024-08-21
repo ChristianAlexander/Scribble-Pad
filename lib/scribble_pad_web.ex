@@ -87,6 +87,8 @@ defmodule ScribblePadWeb do
       import ScribblePadWeb.CoreComponents
       import ScribblePadWeb.Gettext
 
+      import LiveSvelte
+
       # Shortcut for generating JS commands
       alias Phoenix.LiveView.JS
 

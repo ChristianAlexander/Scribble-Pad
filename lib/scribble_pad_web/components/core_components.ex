@@ -17,7 +17,7 @@ defmodule ScribblePadWeb.CoreComponents do
   use Phoenix.Component
 
   alias Phoenix.LiveView.JS
-  import ScribblePadWeb.Gettext
+  use Gettext, backend: ScribblePadWeb.Gettext
 
   @doc """
   Renders a modal.

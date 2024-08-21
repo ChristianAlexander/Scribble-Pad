@@ -8,6 +8,7 @@ defmodule ScribblePad.Application do
   @impl true
   def start(_type, _args) do
     children = [
+      {NodeJS.Supervisor, [path: LiveSvelte.SSR.NodeJS.server_path(), pool_size: 4]},
       ScribblePadWeb.Telemetry,
       {DNSCluster, query: Application.get_env(:scribble_pad, :dns_cluster_query) || :ignore},
       {Phoenix.PubSub, name: ScribblePad.PubSub},

@@ -20,5 +20,5 @@ defmodule ScribblePadWeb.Gettext do
 
   See the [Gettext Docs](https://hexdocs.pm/gettext) for detailed usage.
   """
-  use Gettext, otp_app: :scribble_pad
+  use Gettext.Backend, otp_app: :scribble_pad
 end

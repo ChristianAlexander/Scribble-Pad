@@ -39,7 +39,6 @@ defmodule ScribblePad.MixProject do
       {:phoenix_live_view, "~> 1.0.0-rc.1", override: true},
       {:floki, ">= 0.30.0", only: :test},
       {:phoenix_live_dashboard, "~> 0.8.3"},
-      {:esbuild, "~> 0.8", runtime: Mix.env() == :dev},
       {:tailwind, "~> 0.2", runtime: Mix.env() == :dev},
       {:heroicons,
        github: "tailwindlabs/heroicons",
@@ -55,7 +54,8 @@ defmodule ScribblePad.MixProject do
       {:gettext, "~> 0.20"},
       {:jason, "~> 1.2"},
       {:dns_cluster, "~> 0.1.1"},
-      {:bandit, "~> 1.5"}
+      {:bandit, "~> 1.5"},
+      {:live_svelte, "~> 0.13.3"}
     ]
   end
 
@@ -68,11 +68,12 @@ defmodule ScribblePad.MixProject do
   defp aliases do
     [
       setup: ["deps.get", "assets.setup", "assets.build"],
-      "assets.setup": ["tailwind.install --if-missing", "esbuild.install --if-missing"],
-      "assets.build": ["tailwind scribble_pad", "esbuild scribble_pad"],
+      "assets.setup": ["tailwind.install --if-missing", "npm install --prefix assets"],
+      "assets.build": ["tailwind scribble_pad"],
       "assets.deploy": [
         "tailwind scribble_pad --minify",
         "esbuild scribble_pad --minify",
+        "node build.js --deploy --prefix assets",
         "phx.digest"
       ]
     ]
