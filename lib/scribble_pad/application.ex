@@ -12,6 +12,7 @@ defmodule ScribblePad.Application do
       ScribblePadWeb.Telemetry,
       {DNSCluster, query: Application.get_env(:scribble_pad, :dns_cluster_query) || :ignore},
       {Phoenix.PubSub, name: ScribblePad.PubSub},
+      ScribblePad.PadManager,
       # Start the Finch HTTP client for sending emails
       {Finch, name: ScribblePad.Finch},
       # Start a worker by calling: ScribblePad.Worker.start_link(arg)

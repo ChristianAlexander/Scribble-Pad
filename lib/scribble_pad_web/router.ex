@@ -18,6 +18,8 @@ defmodule ScribblePadWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :home
+    post "/", PageController, :start_pad
+    live "/pad/:pad_id", DrawLive
   end
 
   # Other scopes may use custom stacks.
