@@ -1,18 +1,22 @@
 # ScribblePad
 
+A demonstration of a Phoenix LiveView / live_svelte application that allows multiple users to draw together on virtual notepads.
+
+The companion repository to a YouTube video:
+
+[![Watch the video](https://img.youtube.com/vi/LBYQ_NLVKCw/maxresdefault.jpg)](https://youtu.be/LBYQ_NLVKCw)
+
+## Requirements
+
+- Erlang & Elixir
+- Node JS
+
+## Running
+
 To start your Phoenix server:
 
-  * Run `mix setup` to install and setup dependencies
-  * Start Phoenix endpoint with `mix phx.server` or inside IEx with `iex -S mix phx.server`
+- Run `mix setup` to install and setup dependencies
+- Start Phoenix endpoint with `mix phx.server` or inside IEx with `iex -S mix phx.server`
 
 Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
-
-Ready to run in production? Please [check our deployment guides](https://hexdocs.pm/phoenix/deployment.html).
-
-## Learn more
-
-  * Official website: https://www.phoenixframework.org/
-  * Guides: https://hexdocs.pm/phoenix/overview.html
-  * Docs: https://hexdocs.pm/phoenix
-  * Forum: https://elixirforum.com/c/phoenix-forum
-  * Source: https://github.com/phoenixframework/phoenix
+If everything is set up correctly, you should be able to create a new pad and start drawing!
